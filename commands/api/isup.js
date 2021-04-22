@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const snekfetch = require('snekfetch');
 const { MessageEmbed } = require("discord.js");
-const Config = require('./config.json');
+const Config = require('././config.json');
 const apiKey = Config.apikey;
 
 module.exports = {

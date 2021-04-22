@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-
+//Cahnge Author To Channel for help in server chat
 module.exports = {
     name: "help",
     aliases: ["h", "cmd", "cmds"],
@@ -32,7 +32,7 @@ function getAll(client, message) {
         .map(cat => stripIndents`**${cat[0].toUpperCase() + cat.slice(1)}** \n${commands(cat)}`)
         .reduce((string, category) => string + "\n" + category);
 
-    return message.author.send(embed.setDescription(info));
+    return message.channel.send(embed.setDescription(info));
 }
 
 function getCMD(client, message, input) {
@@ -43,7 +43,7 @@ function getCMD(client, message, input) {
     let info = `No information found for command **${input.toLowerCase()}**`;
 
     if (!cmd) {
-        return message.author.send(embed.setColor("RED").setDescription(info));
+        return message.channel.send(embed.setColor("RED").setDescription(info));
     }
 
     if (cmd.name) info = `**Command name**: ${cmd.name}`;
@@ -54,5 +54,5 @@ function getCMD(client, message, input) {
         embed.setFooter(`Syntax: <> = required, [] = optional`);
     }
 
-    return message.author.send(embed.setColor("GREEN").setDescription(info));
+    return message.channel.send(embed.setColor("GREEN").setDescription(info));
 }

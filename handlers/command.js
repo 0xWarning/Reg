@@ -11,7 +11,7 @@ const loadedStr = "[".white +"Loaded".green + "]".white + " ";
 
 module.exports = (client) => {
     // Read every commands subfolder
-    console.clear();
+    //console.clear();
     console.log(xAPI + 'Checking Commands'.yellow);
     readdirSync("./commands/").forEach(dir => {
         // Filter so we only have .js command files
@@ -28,7 +28,7 @@ module.exports = (client) => {
                 console.log(loadedStr + file);
             } else {
                 //table.addRow(file, `❌  -> missing a help.name, or help.name is not a string.`);
-                console.log(errorStr + file + ' Error -> missing a help.name, or help.name is not a string.');
+                console.log(errorStr + file + ' missing a help.name, or help.name is not a string.');
                 continue;
             }
     
