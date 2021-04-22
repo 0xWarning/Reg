@@ -3,6 +3,11 @@
 He's called Reg.
 Yes the bot has a name so what
 
+# Preview
+
+https://user-images.githubusercontent.com/65122657/115788042-ff747980-a3ba-11eb-8ca0-594657f1d789.mp4
+
+
 # Config
 
 ```json
